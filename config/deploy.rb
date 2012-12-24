@@ -13,3 +13,13 @@ ssh_options[:forward_agent] = true
 
 set :copy_exclude, ["*.sh", ".git*", "config/deploy*", "Capfile", "Tests", "README"]
 
+namespace :vendors do
+  desc "install composer dependencies"
+  task :update do 
+      run "cd #{current_path} && php composer.phar install"
+  end
+
+end
+
+after "deploy:finalize_update", "vendors:update"
+
