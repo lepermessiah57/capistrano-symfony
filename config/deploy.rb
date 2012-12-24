@@ -3,7 +3,7 @@ set :default_stage, 'local'
 require 'capistrano/ext/multistage'
 
 set :application, "Symfony2 base"
-set :repository,  "localhost:/home/dagger57/code/Symfony"
+set :repository,  "https://github.com/lepermessiah57/capistrano-symfony.git"
 set :branch, "master"
 
 set :scm, :git
