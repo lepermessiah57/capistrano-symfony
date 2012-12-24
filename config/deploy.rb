@@ -16,7 +16,7 @@ set :copy_exclude, ["*.sh", ".git*", "config/deploy*", "Capfile", "Tests", "READ
 namespace :vendors do
   desc "install composer dependencies"
   task :update do 
-      run "cd #{current_path} && php composer.phar install"
+      run "sh -c 'cd #{release_path} && php composer.phar install'"
   end
 
 end
